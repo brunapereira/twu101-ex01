@@ -14,6 +14,11 @@ public class Main {
 
         System.out.println("Exit = 0");
 
+        ProcessInputs();
+
+    }
+
+    private static void ProcessInputs(){
         while(true) {
 
             System.out.println("Choose an option:");
@@ -39,7 +44,6 @@ public class Main {
                 }
             }
         }
-
     }
 
     private static void PrintRightTriangle(int n) {
