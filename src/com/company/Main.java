@@ -14,11 +14,11 @@ public class Main {
 
         System.out.println("Exit = 0");
 
-        ProcessInputs();
+        processInputs();
 
     }
 
-    private static void ProcessInputs(){
+    private static void processInputs(){
         while(true) {
 
             System.out.println("Choose an option:");
@@ -29,48 +29,47 @@ public class Main {
             if(option == 0){ break; }
 
             if (option == 1) {
-                PrintAsterisk();
+                printAsterisk();
+                System.out.println();
             }
             else if (option == 2 || option == 3 || option == 4) {
                 System.out.println("Insira o tamanho do objeto desejado:");
                 int n = Integer.parseInt(s.nextLine());
 
                 if (option == 2) {
-                    PrintHorizontalLine(n);
+                    printHorizontalLine(n);
                 } else if (option == 3) {
-                    PrintVerticalLine(n);
+                    printVerticalLine(n);
                 } else if (option == 4) {
-                    PrintRightTriangle(n);
+                    printRightTriangle(n);
                 }
             }
         }
     }
 
-    private static void PrintRightTriangle(int n) {
+    private static void printRightTriangle(int n) {
         for(int i = 0; i < n; i++){
-            for(int j = 0; j <= i; j++){
-                System.out.print("*");
-            }
+            printHorizontalLine(i + 1);
+        }
+    }
+
+    private static void printVerticalLine(int n) {
+        for(int i = 0; i < n; i++){
+            printAsterisk();
             System.out.println();
         }
     }
 
-    private static void PrintVerticalLine(int n) {
-        for(int i = 0; i < n; i++){
-            System.out.println("*");
-        }
-    }
-
-    private static void PrintHorizontalLine(int n) {
+    private static void printHorizontalLine(int n) {
 
         for(int i = 0; i < n; i++){
-            System.out.print("*");
+            printAsterisk();
         }
         System.out.println();
 
     }
 
-    private static void PrintAsterisk() {
-        System.out.println("*");
+    private static void printAsterisk() {
+        System.out.print("*");
     }
 }
